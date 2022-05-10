@@ -1,0 +1,7 @@
+.top{
+    max-width: 1024px;
+    margin: 0 auto;
+    min-height: 50vh;
+    border: 2px solid brown;
+    width: 100%;
+}
