@@ -3,13 +3,13 @@ import React, { useEffect, useState } from 'react'
 
 import "./style.css"
 
-const array = [{id:0,value:"email",},{id:1,value:"text"},{id:2,value:"text"},{id:3,value:"Password"}]
+// const array = [{id:0,value:"email",},{id:1,value:"text"},{id:2,value:"text"},{id:3,value:"Password"}]
 
 const CreatePage = () => {
 
     const [inputval, setInputval] = useState([])
     const [ getInputdata, setGetInputdata] = useState({
-        number:"",date:"",email:"",text:"",password:""
+        number:"",date:"",email:"",text:"",password:"",title:""
     })
     const [compval, setCompval] = useState("")
 
@@ -57,15 +57,15 @@ const getInput = (e) => {
 
     return (
         <div className="top">
-          <div style={{display:"flex", justifyContent: "space-between"}}>
-              <div style={{border: '2px solid black', width: '450px', height: '200px'}}>
-                      
-                     <div>
-                         <input onChange={(e)=>getInput(e)}    type="email" value={getInputdata.email} name="email" placeholder="Enter your Email"/>
-                         <input onChange={(e)=>getInput(e)}    type="date" value={getInputdata.date} name="date" placeholder="Enter your date"/>
-                         <input onChange={(e)=>getInput(e)}    type="number" value={getInputdata.number} name="number" placeholder="Enter your number"/>
-                         <input onChange={(e)=>getInput(e)}    type="text" value={getInputdata.text} name="text" placeholder="Enter your text"/>
-                         <input onChange={(e)=>getInput(e)}    type="password" value={getInputdata.password} name="password"placeholder="Enter your password"/>
+          <div className="input_top">
+              <div>
+                        <input className="input_title" onChange={(e)=>getInput(e)}    type="String" value={getInputdata.title} name="title" placeholder="Title of the form"/><br/>
+                     <div className="input_div">
+                        <input onChange={(e)=>getInput(e)}    type="String" value={getInputdata.email} name="email" placeholder="Email"/>
+                        <input onChange={(e)=>getInput(e)}    type="String" value={getInputdata.text} name="text" placeholder="Text"/>
+                        <input onChange={(e)=>getInput(e)}    type="String" value={getInputdata.password} name="password"placeholder="Password"/>
+                        <input onChange={(e)=>getInput(e)}    type="String" value={getInputdata.number} name="number" placeholder="Number"/>
+                        <input onChange={(e)=>getInput(e)}    type="String" value={getInputdata.date} name="date" placeholder="Date"/>
                      </div>
                     
                  <button type="submit" onClick={()=>postData()}>Save Form</button>
@@ -73,12 +73,14 @@ const getInput = (e) => {
 
 
 
-              <div>
-                  <p onClick={(e)=>getvalue(e.target.innerText)} > email </p>
-                  <p onClick={(e)=>getvalue(e.target.innerText)} > text </p>
-                  <p onClick={(e)=>getvalue(e.target.innerText)} > password </p>
-                  <p onClick={(e)=>getvalue(e.target.innerText)} > date </p>
-                  <p onClick={(e)=>getvalue(e.target.innerText)} > number </p>
+              <div className="form_drag">
+                  
+                  <p onClick={(e)=>getvalue(e.target.innerText)} > Title </p>
+                  <p onClick={(e)=>getvalue(e.target.innerText)} > Email </p>
+                  <p onClick={(e)=>getvalue(e.target.innerText)} > Text </p>
+                  <p onClick={(e)=>getvalue(e.target.innerText)} > Password </p>
+                  <p onClick={(e)=>getvalue(e.target.innerText)} > Number </p>
+                  <p onClick={(e)=>getvalue(e.target.innerText)} > Date </p>
               </div>
 
           </div>

@@ -18,13 +18,13 @@ const ViewForm = () => {
 
 
   return (
-    <div>
-        <h1>View Form</h1>
-        <div>{showForm.email} <input /></div>
-        <div>{showForm.text} <input /></div>
-        <div>{showForm.number} <input /></div>
-        <div>{showForm.password} <input /></div>
-        <div>{showForm.date} <input /></div>
+    <div className="top">
+        <h1>{showForm.title}</h1>
+        <div className="view_Div">{showForm.email} <input type={showForm.email} placeholder={ "Enter Your " + showForm.email} /></div>
+        <div className="view_Div">{showForm.text} <input type={showForm.text} placeholder={ "Enter  your " + showForm.text} /></div>
+        <div className="view_Div">{showForm.number} <input type={showForm.number} placeholder={ "Enter your " + showForm.number}/></div>
+        <div className="view_Div">{showForm.password} <input type={showForm.password} placeholder={ "Enter your " + showForm.password}/></div>
+        <div className="view_Div">{showForm.date} <input type={showForm.date} placeholder={ "Enter your " + showForm.date}/></div>
         <button>Submit Form</button>
     </div>
   )
